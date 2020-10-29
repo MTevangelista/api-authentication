@@ -9,7 +9,7 @@ class User {
   public email: string;
 
   @Column()
-  public passport: string;
+  public password: string;
 }
 
 export default User;
