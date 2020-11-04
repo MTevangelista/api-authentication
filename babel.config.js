@@ -11,6 +11,13 @@ module.exports = {
     '@babel/preset-typescript',
   ],
   plugins: [
+    [
+      require('@babel/plugin-proposal-decorators').default,
+      {
+        legacy: true
+      }
+    ],
+    'babel-plugin-transform-typescript-metadata',
     ['module-resolver', {
       alias: {
         '@controllers': './src/controllers',

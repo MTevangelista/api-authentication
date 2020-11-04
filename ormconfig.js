@@ -7,8 +7,8 @@ module.exports = {
   "database": process.env.DATABASE_NAME,
   "synchronize": false,
   "logging": false,
-  "entities": ["src/models/*.ts"],
-  "migrations": ["src/database/migrations/*.ts"],
+  "entities": process.env.DATABASE_URL != process.env.DATABASE_URL_PRODUCTION ? ["src/models/*.ts"] : ["dist/models/*.js"],
+  "migrations": process.env.DATABASE_URL != process.env.DATABASE_URL_PRODUCTION ? ["src/database/migrations/*.ts"] : ["dist/database/migrations/*.js"],
   "cli": {
     "migrationsDir": "src/database/migrations"
   }
